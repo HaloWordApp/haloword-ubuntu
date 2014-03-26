@@ -1,0 +1,15 @@
+{
+    "architecture": "all",
+    "description": "description of haloword",
+    "framework": "ubuntu-sdk-13.10",
+    "hooks": {
+        "haloword": {
+            "apparmor": "haloword.json",
+            "desktop": "haloword.desktop"
+        }
+    },
+    "maintainer": "",
+    "name": "com.ubuntu.developer.username.haloword",
+    "title": "haloword",
+    "version": "0.1"
+}
