@@ -2,8 +2,23 @@
  * Wait before the DOM has been loaded before initializing the Ubuntu UI layer
  */
 window.onload = function () {
-    var UI = new UbuntuUI();
-    UI.init();
+    var UI = new UbuntuUI()
+    UI.init()
+
+    function query(word) {
+        console.log(word)
+        UI.pagestack.push("word-page")
+        $("#definition").html(word)
+    }
+
+    $(".word-link").click(function(event) {
+        query($(this).text())
+    })
+
+    $("#query").submit(function(event) {
+        query($("#word").val())
+        return false
+    })
 
     // Wire all the simple logic
     document.getElementById('no').addEventListener('click', function() {
@@ -59,5 +74,4 @@ window.onload = function () {
         if (console && console.log)
             console.log('Platform layer API ready');
     }, false);
-};
-
+}

@@ -1,134 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Halo Word</title>
-    <meta name="description" content="Halo Word">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<head>
+  <meta charset="utf-8">
+  <title>Halo Word</title>
+  <meta name="description" content="Halo Word">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-    <!-- Ubuntu UI Style imports - Ambiance theme -->
-    <link href="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/css/appTemplate.css" rel="stylesheet" type="text/css" />
+  <!-- Ubuntu UI Style imports - Ambiance theme -->
+  <link href="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/css/appTemplate.css" rel="stylesheet" type="text/css" />
 
-    <!-- Ubuntu UI javascript imports - Ambiance theme -->
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/fast-buttons.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/core.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/buttons.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/dialogs.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/page.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/pagestacks.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/tabs.js"></script>
+  <!-- Ubuntu UI javascript imports - Ambiance theme -->
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/fast-buttons.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/core.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/buttons.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/dialogs.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/page.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/pagestacks.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/tabs.js"></script>
 
-    <!-- Cordova platform API access - Uncomment this to have access to the Javascript APIs -->
-    <!-- <script src="cordova/cordova.js"></script> -->
+  <!-- Cordova platform API access - Uncomment this to have access to the Javascript APIs -->
+  <!-- <script src="cordova/cordova.js"></script> -->
 
-    <!-- Application script -->
-    <script src="js/app.js"></script>
-  </head>
+  <!-- Application script -->
+  <script src="js/app.js"></script>
+  <script src="js/jquery.min.js"></script>
 
-  <body>
+  <style>
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  .clearfix { display: inline-block; }
+  /* start commented backslash hack \*/
+  * html .clearfix { height: 1%; }
+  .clearfix { display: block; }
+  /* close commented backslash hack */
 
-    <div data-role="mainview">
+  #query {
+    margin-bottom: 10px;
+  }
+  #word-wrapper {
+    float: left;
+    width: 75%;
+  }
+  #word {
+    width: 100%;
+  }
+  #define-wrapper {
+    float: left;
+    width: 25%;
+  }
+  #define {
+    width: 100%;
+  }
+  </style>
+</head>
 
-      <header data-role="header">
-        <ul data-role="tabs">
-          <li data-role="tabitem" data-page="hello-page">Halo Word</li>
-        </ul>
-      </header>
+<body>
 
-      <div data-role="content">
+  <div data-role="mainview">
 
-          <!-- The application main page -->
+    <header data-role="header">
+      <ul data-role="tabs">
+        <li data-role="tabitem" data-page="hello-page">Halo Word</li>
+      </ul>
+    </header>
 
-          <div data-role="page" id="hello-page">
+    <div data-role="content">
 
-            <section data-role="list">
-                <header class="large-font">Word List</header>
-                <ul data-role="listview" id="contacts">
+      <!-- The application main page -->
+      <div data-role="pagestack">
 
-                    <li>
-                        <aside>
-                            <img alt="placeholder" src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/img/avatar_contacts_list@8.png">
-                        </aside>
+        <div data-role="page" id="hello-page">
 
-                        <p>Jane</p>
+          <form class="clearfix" id="query" action="#">
+            <div id="word-wrapper"><input type="text" id="word" placeholder="Enter a word"></div>
+            <!-- <div id="define-wrapper"><input type="submit" id="define" value="Define"></div> -->
+          </form>
 
-                        <!-- A list item side control -->
-                        <label>
-                            <input type="checkbox" data-type="switch">
-                            <span class="toggle">
-                                <span class="toggle-handle"></span>
-                                <span class="toggle-bg"></span>
-                            </span>
-                        </label>
-                    </li>
+          <section data-role="list">
+            <header class="large-font">Word List</header>
+            <ul data-role="listview" id="contacts">
+              <li>
+                <a class="word-link" href="#"><p>Jane</p></a>
+              </li>
+              <li>
+                <a class="word-link" href="#"><p>Mark</p></a>
+              </li>
+              <li>
+                <a class="word-link" href="#"><p>Olivier</p></a>
+              </li>
+            </ul>
+          </section>
 
-                    <li>
-                        <aside>
-                            <img alt="placeholder" src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/img/avatar_contacts_list@8.png">
-                        </aside>
+        </div>
 
-                        <p>Mark</p>
-
-                        <!-- A list item side control -->
-                        <label>
-                            <input type="checkbox" data-type="switch">
-                            <span class="toggle">
-                                <span class="toggle-handle"></span>
-                                <span class="toggle-bg"></span>
-                            </span>
-                        </label>
-                    </li>
-
-                    <li>
-                        <aside>
-                            <img alt="placeholder" src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/img/avatar_contacts_list@8.png">
-                        </aside>
-
-                        <p>Olivier</p>
-
-                        <!-- A list item side control -->
-                        <label>
-                            <input type="checkbox" data-type="switch">
-                            <span class="toggle">
-                                <span class="toggle-handle"></span>
-                                <span class="toggle-bg"></span>
-                            </span>
-                        </label>
-                    </li>
-
-                </ul>
-
-            </section>
-
-            <div class="inset" style="margin-top: 1em; text-align: center" >
-
-                <div style="margin: 0em 1em 1em 1em">
-                    <button id="text" data-role="button" class="ubuntu" style="width: 100%">
-                      Text
-                    </button>
-                </div>
-                <div style="margin: 0em 1em 1em 1em">
-                    <button id="call" data-role="button" class="ubuntu" style="width: 100%">
-                      Call
-                      <span class="icon icon-call"></span>
-                    </button>
-                 </div>
-
+        <div data-role="page" id="word-page" data-tite="Word">
+          <p id="definition"></p>
+          <div class="inset" style="margin-top: 1em; text-align: center" >
+            <div style="margin: 0em 1em 1em 1em">
+              <button id="add" data-role="button" class="ubuntu" style="width: 100%">
+                Add to Word List
+              </button>
             </div>
-
-            <div data-role="dialog" id="dialog1">
-                <section>
-                    <h1></h1>
-                    <menu>
-                        <button data-role="button" id="no">OK</button>
-                    </menu>
-                </section>
-            </div>
-
           </div>
+        </div>
 
       </div>
-      
+
     </div>
-  </body>
+
+  </div>
+</body>
 </html>
