@@ -44,11 +44,13 @@
     margin-bottom: 10px;
   }
   #word-wrapper {
-    float: left;
-    width: 75%;
+    text-align: center;
   }
   #word {
-    width: 100%;
+    width: 95%;
+    margin: 8px auto;
+    padding: 12px;
+    font-size: 19px;
   }
   #define-wrapper {
     float: left;
@@ -56,6 +58,17 @@
   }
   #define {
     width: 100%;
+  }
+
+  #word-list li {
+    padding-left: 0;
+  }
+  #word-list p {
+    font-size: 19px;
+  }
+
+  #word-page > p {
+    padding: 4px 14px;
   }
   </style>
 </head>
@@ -91,7 +104,8 @@
         </div>
 
         <div data-role="page" id="word-page" data-tite="Word">
-          <p id="definition"></p>
+          <p id="extradef"></p>
+          <p id="maindef"></p>
           <div class="inset" style="margin-top: 1em; text-align: center" >
             <div style="margin: 0em 1em 1em 1em">
               <button id="add" data-role="button" class="ubuntu" style="width: 100%">

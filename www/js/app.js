@@ -64,7 +64,7 @@ window.onload = function () {
     function query(word) {
         current_word = word
         UI.pagestack.push("word-page")
-        $("#definition").html(word)
+        $("#maindef").html(word)
         refresh_add_button(word)
     }
 
