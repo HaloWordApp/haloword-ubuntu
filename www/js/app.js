@@ -1,27 +1,71 @@
-/**
- * Wait before the DOM has been loaded before initializing the Ubuntu UI layer
- */
-window.onload = function () {
-    var UI = new UbuntuUI()
-    UI.init()
-
+function load_default_words() {
     if (!localStorage["word_imported"]) {
         var default_words = ["halo", "miaow", "caesium", "love", "dysprosium", "Iridium", "daisy", "Ubuntu", "Capella"]
         localStorage["words"] = default_words
     }
+}
 
+function refresh_word_list() {
     var words = localStorage["words"].split(",")
-    console.log(words)
     var word_list_html = ""
     for (var i in words) {
         word_list_html += '<li><a class="word-link" href="#"><p>' + words[i] + '</p></a></li>\n'
     }
     $("#word-list").html(word_list_html)
+}
+
+function in_word_list(word) {
+    var words = localStorage["words"].split(",")
+    return words.indexOf(word) > -1;
+}
+
+function refresh_add_button(word) {
+    if (in_word_list(word)) {
+        $("#add").html("Remove From Word List")
+    }
+    else {
+        $("#add").html("Add to Word List")
+    }
+}
+
+function add(word) {
+    var words = localStorage["words"].split(",")
+    words.push(word)
+    localStorage["words"] = words
+}
+
+function remove(word) {
+    var words = localStorage["words"].split(",")
+    var index = words.indexOf(word);
+    if (index > -1) {
+        words.splice(index, 1);
+    }
+    localStorage["words"] = words
+}
+
+function toggle(word) {
+    if (in_word_list(word)) {
+        remove(word)
+    }
+    else {
+        add(word)
+    }
+}
+
+window.onload = function () {
+    var UI = new UbuntuUI()
+    UI.init()
+
+    load_default_words()
+    refresh_word_list()
+
+    var current_word = "halo:home"
 
     function query(word) {
-        console.log(word)
+        current_word = word
         UI.pagestack.push("word-page")
         $("#definition").html(word)
+        refresh_add_button(word)
     }
 
     $(".word-link").click(function(event) {
@@ -31,6 +75,12 @@ window.onload = function () {
     $("#query").submit(function(event) {
         query($("#word").val())
         return false
+    })
+
+    $("#add").click(function(event) {
+        toggle(current_word)
+        refresh_word_list()
+        refresh_add_button(current_word)
     })
 
 
