@@ -75,6 +75,10 @@ window.onload = function () {
 
         get_webster(word, function(html) {
             $("#maindef").html(html)
+
+            $(".pronounce").click(function() {
+                $("audio", this)[0].play()
+            })
         })
 
         refresh_add_button(word)
