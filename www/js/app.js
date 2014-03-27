@@ -56,6 +56,13 @@ window.onload = function () {
     var UI = new UbuntuUI()
     UI.init()
 
+    on_resize()
+    $(window).resize(on_resize)
+
+    function on_resize() {
+        $("#word").width($(window).width() - 32);
+    }
+
     load_default_words()
     refresh_word_list()
 
@@ -64,7 +71,12 @@ window.onload = function () {
     function query(word) {
         current_word = word
         UI.pagestack.push("word-page")
-        $("#maindef").html(word)
+        $("#maindef").html("Loading...")
+
+        get_webster(word, function(html) {
+            $("#maindef").html(html)
+        })
+
         refresh_add_button(word)
     }
 
