@@ -23,10 +23,12 @@
 
   <!-- Application script -->
   <script src="js/app.js"></script>
+  <script src="js/youdao.js"></script>
   <script src="js/webster.js"></script>
   <script src="js/mustache.min.js"></script>
   <script src="js/jquery.min.js"></script>
 
+  <link href="css/youdao.css" rel="stylesheet" type="text/css" />
   <link href="css/webster.css" rel="stylesheet" type="text/css" />
   <style>
   .clearfix:after {
@@ -120,7 +122,10 @@
         </div>
 
         <div data-role="page" id="word-page" data-tite="Word">
-          <p id="extradef"></p>
+          <section id="extradef">
+              <p><span class="phonetic"></span><a class="from" target="_blank"></a></p>
+              <p class="content"></p>
+          </section>
           <p id="maindef"></p>
           <div class="inset" style="margin-top: 1em; text-align: center" >
             <div style="margin: 0em 1em 1em 1em">

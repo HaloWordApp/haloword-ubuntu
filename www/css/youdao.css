@@ -1,0 +1,39 @@
+#extradef {
+  background-color: #f6f6f6;
+  border-radius: 4px;
+  margin: 20px 12px 0 12px;
+  padding: 12px 15px 10px 15px;
+}
+#extradef .phonetic {
+  margin-left: -2px;
+}
+#extradef .phonetic span {
+  font-size: 15px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  padding: 3px 8px 2px 8px;
+  border-radius: 2px;
+  background-color: #fdfdfd;
+  box-shadow: 1px 1px 1px #f0f0f0;
+}
+#extradef p {
+  line-height: 1.6em;
+  font-family: Ubuntu, 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+}
+#extradef .from {
+  font-family: Ubuntu, 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  display: inline-block;
+  float: right;
+  color: #ccc;
+  margin: 3px 12px 0 0;
+}
+#extradef .content {
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: 6px;
+}
+#extradef .content p {
+  padding-left: 0;
+}

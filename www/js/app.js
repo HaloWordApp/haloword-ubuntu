@@ -36,9 +36,9 @@ function add(word) {
 
 function remove(word) {
     var words = localStorage["words"].split(",")
-    var index = words.indexOf(word);
+    var index = words.indexOf(word)
     if (index > -1) {
-        words.splice(index, 1);
+        words.splice(index, 1)
     }
     localStorage["words"] = words
 }
@@ -72,6 +72,8 @@ window.onload = function () {
         current_word = word
         UI.pagestack.push("word-page")
         $("#maindef").html("Loading...")
+
+        get_youdao(word)
 
         get_webster(word, function(html) {
             $("#maindef").html(html)
