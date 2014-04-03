@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=haloword
 Exec=ubuntu-html5-app-launcher $@ --www=www
-Icon=qmlscene
+Icon=icon256.png
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true

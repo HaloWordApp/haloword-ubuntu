@@ -1,15 +1,15 @@
 {
+    "name": "com.ubuntu.developer.xhacker.haloword",
+    "description": "A well-designed dictionary application.",
+    "framework": "ubuntu-sdk-14.04-html-dev1",
     "architecture": "all",
-    "description": "description of haloword",
-    "framework": "ubuntu-sdk-13.10",
+    "title": "Halo Word",
     "hooks": {
         "haloword": {
             "apparmor": "haloword.json",
             "desktop": "haloword.desktop"
         }
     },
-    "maintainer": "",
-    "name": "com.ubuntu.developer.username.haloword",
-    "title": "haloword",
-    "version": "0.1"
+    "version": "0.1.1",
+    "maintainer": "Xhacker Liu <liu.dongyuan@gmail.com>"
 }
