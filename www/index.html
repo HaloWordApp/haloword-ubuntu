@@ -108,18 +108,14 @@
 
   <div data-role="mainview">
 
-    <header data-role="header">
-      <ul data-role="tabs">
-        <li data-role="tabitem" data-page="hello-page">Halo Word</li>
-      </ul>
-    </header>
+    <header data-role="header"></header>
 
     <div data-role="content">
 
       <!-- The application main page -->
       <div data-role="pagestack">
 
-        <div data-role="page" id="hello-page" data-tite="Halo Word">
+        <div data-role="page" id="hello-page" data-title="Halo Word">
 
           <form class="clearfix" id="query" action="#">
             <div id="word-wrapper"><input type="text" id="word" placeholder="Enter a word"></div>
@@ -134,7 +130,7 @@
 
         </div>
 
-        <div data-role="page" id="word-page" data-tite="Word">
+        <div data-role="page" id="word-page" data-title="Word">
           <section id="extradef">
               <p><span class="phonetic"></span><a class="from" target="_blank"></a></p>
               <p class="content"></p>

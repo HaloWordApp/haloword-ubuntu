@@ -70,6 +70,9 @@ window.onload = function () {
 
     function query(word) {
         current_word = word
+
+        $("#word-page").attr("data-title", word)
+
         UI.pagestack.push("word-page")
         $("#maindef").html("Loading...")
 
