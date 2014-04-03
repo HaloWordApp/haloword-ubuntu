@@ -3,6 +3,9 @@ const YOUDAO_API_KEY = "1311342268";
 var youdao_url = "http://fanyi.youdao.com/fanyiapi.do?keyfrom=" + YOUDAO_API_KEYFROM + "&key=" + YOUDAO_API_KEY + "&type=data&doctype=json&version=1.1&q=";
 
 function get_youdao(word) {
+    $("#extradef .phonetic").html("<span>ˈləʊdɪŋ</span>");
+    $("#extradef .content").html("<p>loading...</p>");
+
     $.ajax({
         url: youdao_url + word,
         dataType: "json",
