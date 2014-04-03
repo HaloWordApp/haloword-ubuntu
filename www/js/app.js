@@ -1,6 +1,6 @@
 function load_default_words() {
     if (!localStorage["word_imported"]) {
-        var default_words = ["halo", "miaow", "caesium", "love", "dysprosium", "Iridium", "daisy", "Ubuntu", "Capella"]
+        var default_words = ["halo", "word", "dysprosium", "love", "cesium", "love", "daisy", "Capella"]
         localStorage["words"] = default_words
     }
 }

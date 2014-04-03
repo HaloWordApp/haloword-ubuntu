@@ -17,6 +17,7 @@
   <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/page.js"></script>
   <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/pagestacks.js"></script>
   <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/tabs.js"></script>
+  <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/toolbars.js"></script>
 
   <!-- Cordova platform API access - Uncomment this to have access to the Javascript APIs -->
   <!-- <script src="cordova/cordova.js"></script> -->
@@ -74,6 +75,18 @@
     padding: 4px 14px;
   }
 
+  #add_li {
+    width: 180px;
+    margin-right: 20px;
+  }
+  #add {
+    width: 180px;
+    font-size: 14px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+  }
+
   .pronounce {
     display: inline-block;
     position: relative;
@@ -106,7 +119,7 @@
       <!-- The application main page -->
       <div data-role="pagestack">
 
-        <div data-role="page" id="hello-page">
+        <div data-role="page" id="hello-page" data-tite="Halo Word">
 
           <form class="clearfix" id="query" action="#">
             <div id="word-wrapper"><input type="text" id="word" placeholder="Enter a word"></div>
@@ -129,11 +142,17 @@
           <p id="maindef"></p>
           <div class="inset" style="margin-top: 1em; text-align: center" >
             <div style="margin: 0em 1em 1em 1em">
-              <button id="add" data-role="button" class="ubuntu" style="width: 100%">
-                Add to Word List
-              </button>
+
             </div>
           </div>
+
+          <footer data-role="footer" class="revealed" id="footerID">
+            <nav><ul>
+              <li id="add_li">
+                <button id="add" data-role="button" class="ubuntu">Add to Word List</button>
+              </li>
+            </ul></nav>
+          </footer>
         </div>
 
       </div>
